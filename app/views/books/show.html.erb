@@ -1,1 +1,5 @@
-<h1>Show</h1>
+<h2>Show</h2>
+<h2>Book detail</h2>
+  <% if @book.user == current_user %>
+    <%= link_to "Destroy", book_path(@book), method: :delete %>
+  <% end %>

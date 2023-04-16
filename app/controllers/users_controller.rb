@@ -37,20 +37,8 @@ before_action :is_matching_login_user, only: [:edit, :update]
   def is_matching_login_user
     user = User.find(params[:id])
     unless user.id == current_user.id
-      redirect_to books_path
+      redirect_to user_path(current_user.id)
     end
   end
-
-  #def correct_user
-    #@user = User.find(params[:id])
-    #@book = @user.book
-    #redirect_to(books_path) unless @book == current_user
-  #end
-
-  #def ensure_user
-   # @user = current_user.books
-    #@book = @user.find_by(id: params[:id])
-    #redirect_to (books_path) unless @book
-  #end
 
 end
